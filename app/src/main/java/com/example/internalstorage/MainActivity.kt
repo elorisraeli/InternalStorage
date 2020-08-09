@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
     var allTextSaveFun: String = ""
     var textInTheFile: String = ""
     private var counterOfFile1 = 0
-    private var counterOfFile2 = 1
-    private var fileAllName = "myTestFile"+counterOfFile1
     private var FILE_NAME = "myTestFile$counterOfFile1.txt"
     // i thought maybe its good to separate the counters, not for now, so the line under get "//"
 //    private val FILE_NAMECounter2 = "myTestFile$counterOfFile2.txt"
@@ -73,10 +71,7 @@ class MainActivity : AppCompatActivity() {
         timerTask = object : TimerTask() {
             override fun run() {
                 handler.post {
-
                     ifFun()
-                    // we don't need the stop timer now, but it an option to remember.
-//                        stopTimer()
                     // if the condition not true rise the counter and run function again.
                     if(bool == false) {
                         counterOfFile1++
@@ -107,10 +102,8 @@ class MainActivity : AppCompatActivity() {
             fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE)
             // writing the text we collect
             fos.write(allTextSaveFun.toByteArray())
-//                mEditText!!.setText(allTextSaveFun)
             Log.d("tag", "Chars number: ${checkCharsNum()} - All Text is: $allTextSaveFun")
             Log.d("tag", "File: $FILE_NAME Text In The File is: $textInTheFile")
-//            Toast.makeText(this, "Saved to $filesDir/$FILE_NAME", Toast.LENGTH_SHORT).show()
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         } catch (e: IOException) {
