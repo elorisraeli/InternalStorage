@@ -48,19 +48,35 @@
 
     <Button
         android:id="@+id/buttonClearData"
-        android:layout_width="92dp"
-        android:layout_height="58dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonCleanText"
         android:layout_alignStart="@+id/button_load"
         android:layout_alignLeft="@+id/button_load"
         android:layout_alignEnd="@+id/button_load"
         android:layout_alignRight="@+id/button_load"
-        android:layout_alignBottom="@+id/button_load"
-        android:layout_marginStart="-137dp"
-        android:layout_marginLeft="-137dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
-        android:layout_marginBottom="-2dp"
+        android:layout_marginStart="-129dp"
+        android:layout_marginLeft="-129dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
         android:text="Clear File Data" />
+
+    <Button
+        android:id="@+id/buttonCleanText"
+        android:layout_width="92dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/edit_text"
+        android:layout_alignStart="@+id/button_load"
+        android:layout_alignLeft="@+id/button_load"
+        android:layout_alignEnd="@+id/button_load"
+        android:layout_alignRight="@+id/button_load"
+        android:layout_marginStart="-129dp"
+        android:layout_marginLeft="-129dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:text="Clean Text Box" />
 
 
 </RelativeLayout>
