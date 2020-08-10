@@ -18,14 +18,14 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    var mEditText: EditText? = null
-    var textInTheFile: String = ""
-    private var counterOfFile1 = 0
-    private val FILE_NAME_TEST = "anotherTestFile.txt"
 
+    private val FILE_NAME_TEST = "anotherTestFile.txt"
     var isClicked: Boolean = false
     var allTextSaveFun: String = ""
-    private var FILE_NAME = "myTestFile$counterOfFile1.txt"
+    var mEditText: EditText? = null
+    var textInTheFile: String = ""
+    private var counterOfFile = 0
+    private var FILE_NAME = "myTestFile$counterOfFile.txt"
     private var maxCharsInFile = 400
     private var bool = true
     private var timer: Timer? = null
@@ -170,8 +170,8 @@ class MainActivity : AppCompatActivity() {
                     // if the condition not true rise the counter, change file name,
                     // clear the text in the file variable and run function again.
                     if (!bool) {
-                        counterOfFile1++
-                        FILE_NAME = "myTestFile$counterOfFile1.txt"
+                        counterOfFile++
+                        FILE_NAME = "myTestFile$counterOfFile.txt"
                         textInTheFile = ""
                         ifFun(view)
                     }
