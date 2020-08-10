@@ -6,6 +6,7 @@ import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,15 +15,12 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    //    private val FILE_NAME = "myTestFile.txt"
     var mEditText: EditText? = null
     var isClicked: Boolean = false
     var allTextSaveFun: String = ""
     var textInTheFile: String = ""
     private var counterOfFile1 = 0
     private var FILE_NAME = "myTestFile$counterOfFile1.txt"
-    // i thought maybe its good to separate the counters, not for now, so the line under get "//"
-//    private val FILE_NAMECounter2 = "myTestFile$counterOfFile2.txt"
     private var maxCharsInFile = 200
     private var bool = true
 
@@ -52,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         buttonClear.setOnClickListener { ClearData() }
         val buttonCleanText = findViewById<Button>(R.id.buttonCleanText)
         buttonCleanText.setOnClickListener { CleanTextBox() }
+
+        val imageView = findViewById<ImageView>(R.id.imageViewPlay)
+        imageView.setOnClickListener {
+            mEditText!!.setText(imageView.id.toString())
+        }
     }
 
     private fun CleanTextBox() {
@@ -205,34 +208,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-    // fun not in use, the first fun i work with.
-    fun writeInTheFile() {
-        val text = mEditText!!.text.toString()
-        // collect all the text lines
-        allTextSaveFun += "$text ElorIsraeli"
-        var fos: FileOutputStream? = null
-        try {
-            fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE)
-            // writing the text we collect
-            fos.write(allTextSaveFun.toByteArray())
-//                mEditText!!.setText(allTextSaveFun)
-            Log.d("tag", "Chars number: ${checkCharsNum()} - All Text is: $allTextSaveFun")
-            Log.d("tag", "File: $FILE_NAME Text In The File is: $textInTheFile")
-            Toast.makeText(this, "Saved to $filesDir/$FILE_NAME", Toast.LENGTH_SHORT).show()
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } finally {
-            if (fos != null) {
-                try {
-                    fos.close()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-            }
-        }
-    }
-
+    
 }
