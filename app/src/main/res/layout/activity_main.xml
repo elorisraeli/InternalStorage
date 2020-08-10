@@ -80,6 +80,7 @@
 
     <ImageView
         android:id="@+id/imageViewPlay"
+        android:tag="imageViewPlay"
         android:layout_width="84dp"
         android:layout_height="76dp"
         android:layout_below="@+id/radioButtonPlay"
@@ -97,6 +98,7 @@
 
     <Switch
         android:id="@+id/switchPlay"
+        android:tag="switchPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_load"
@@ -113,6 +115,7 @@
 
     <CheckBox
         android:id="@+id/checkBoxPlay"
+        android:tag="checkBoxPlay"
         android:layout_width="162dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switchPlay"
@@ -129,6 +132,7 @@
 
     <RadioButton
         android:id="@+id/radioButtonPlay"
+        android:tag="radioButtonPlay"
         android:layout_width="167dp"
         android:layout_height="26dp"
         android:layout_below="@+id/checkBoxPlay"
@@ -161,6 +165,18 @@
         android:text="Play Zone:"
         android:textSize="18sp"
         android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/buttonNextActivity"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonClearData"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:layout_toStartOf="@+id/imageViewPlay"
+        android:layout_toLeftOf="@+id/imageViewPlay"
+        android:text="Next Activity" />
 
 
 </RelativeLayout>
